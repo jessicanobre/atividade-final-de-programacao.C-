@@ -9,8 +9,7 @@
  string status[20];
 
 int controle = 0;
-  
-
+ 
   int main () {
     
     int opcao;
@@ -25,30 +24,53 @@ int controle = 0;
    cout << "Escolha uma opção: " << endl;
    cin >> opcao;
 
-   if (opcao == 1)
-   {
-    cout << "Adicionar Tarefa" << endl;
+   if (opcao == 1) {
+    id[controle] = controle;
+    cout << "Digite o titulo: " << endl;
+    cin >> titulo[controle];
+    cout << "Digite a descrição: " << endl;
+    cin >> descricao [controle];
+    cout << "Digite a data de vencimento: " << endl;
+    cin >> dataVencimento [controle];
+    cout << "Digite o status da tarefa: " << endl;
+    cin >> status [controle];
+    controle ++;
    }
-   if (opcao == 2)
-   {
-    cout << "Visualizar Tarefas" << endl;
-   }
-   if (opcao == 3)
-   {
-    cout << "Editar Tarefa" << endl;
-   }
-   if (opcao == 4)
-   {
-    cout << "Remover Tarefa" << endl;
-   }
-   if (opcao == 5)
-   {
-    cout << "Buscar Tarefa" << endl;
-   }
-   if (opcao == 6)
-   {
-    cout << "Filtrar Tarefas por Status" << endl;
-   }
+   else if (opcao == 2){
+    
+    for(int i = 0; i < controle; i++) {
+     
+      cout << "titulo: " << titulo[i] << endl;
+      cout << "descrição: " << descricao[i] << endl;
+      cout << "data de vencimemto: " << dataVencimento[i] << endl;
+      cout << "status da tarefa: " << status[i] << endl;
+
+    } 
+    }else if (opcao == 3){
+      int editar;
+      
+       cout << "titulo: " << titulo << endl;
+       cin >> titulo[editar];
+       cout << "descrição: " << descricao << endl;
+       cin >> descricao[editar];
+       cout << "data de vencimento: " << dataVencimento << endl;
+       cin >> dataVencimento[editar];
+       cout << "status: " << status << endl;
+       cin >> status[editar];
+
+    }else if (opcao == 4){
+      int remover;
+    
+     cout << "titulo " << titulo << endl;
+     cin >> titulo[remover];
+     cout << "descrição" << descricao << endl;
+     cin >> descricao[remover];
+     cout << "data de vencimento" << dataVencimento << endl;
+     cin >> dataVencimento[remover];
+     cout << "status" << status << endl;
+     cin >> status[remover];
+
+    }
   
     } while (opcao != 0);
     
