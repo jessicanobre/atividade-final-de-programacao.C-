@@ -9,7 +9,8 @@
  string status[20];
 
 int controle = 0;
- 
+int editar = 0;
+int remover = 0; 
   int main () {
     
     int opcao;
@@ -46,9 +47,11 @@ int controle = 0;
       cout << "status da tarefa: " << status[i] << endl;
 
     } 
-    }else if (opcao == 3){
-      int editar;
+    }if (opcao == 3){
+      id [editar] = editar;
       
+       cout << "ID da tarefa a editar: " << endl;
+       cin >> id[editar];
        cout << "titulo: " << titulo << endl;
        cin >> titulo[editar];
        cout << "descrição: " << descricao << endl;
@@ -57,21 +60,21 @@ int controle = 0;
        cin >> dataVencimento[editar];
        cout << "status: " << status << endl;
        cin >> status[editar];
-
-    }else if (opcao == 4){
-      int remover;
-    
-     cout << "titulo " << titulo << endl;
-     cin >> titulo[remover];
-     cout << "descrição" << descricao << endl;
-     cin >> descricao[remover];
-     cout << "data de vencimento" << dataVencimento << endl;
-     cin >> dataVencimento[remover];
-     cout << "status" << status << endl;
-     cin >> status[remover];
+      
+    } else
+    {
+      for(int i = 0; i < controle; i++) {
+     
+      cout << "titulo: " << titulo[i] << endl;
+      cout << "descrição: " << descricao[i] << endl;
+      cout << "data de vencimemto: " << dataVencimento[i] << endl;
+      cout << "status da tarefa: " << status[i] << endl;
 
     }
-  
-    } while (opcao != 0);
     
- }
+     
+    }
+    } while (opcao != 0);
+
+    return 0;
+    }
